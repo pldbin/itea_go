@@ -1,33 +1,18 @@
-Ипподром Goal
-Casablanca организует новый вид скачек: парные скачки.
-Во время дуала в скачках участвуют только две лошади.
-Чтобы гонка была интересной, необходимо постараться подобрать
-двух лошадей с одинаковой силой.
+Home Work1
+Микола Солянко
+•
+26 лют.
+20 балів
+The Goal
+Casablanca’s hippodrome is organizing a new type of horse racing: duals. During a dual, only two horses will participate in the race.
+In order for the race to be interesting, it is necessary to try to select two horses with similar strength.
 
-Напишите программу, которая, используя заданное количество сил,
-идентифицирует две ближайшие силы и показывает их
-разницу с целым числом (≥ 0).
+Write a program which, using a given number of strengths, identifies the two closest strengths and shows their difference with an integer (≥ 0).
 
-Входная
-строка 1: количество N лошадей
+Input
+Line 1: Number N of horses
 
-Следующие N строк: сила Pi каждой лошади. Пи — целое число.
+The N following lines: the strength Pi of each horse. Pi is an integer.
 
-Выходные данные
-Разница D между двумя ближайшими силами. D — целое число,
-большее или равное 0.
-----------------------------------------------------------------------------
-По перше треба зчитати данні з клавіатури тобто самі дані треба вводити а не задавати самостійно.
-
-Після цього потрібно порахувати найменшу різницю між силами конів.
-Тобто можна зробити сортування або два цикла і брати коня 0 і коня 1 і взяти їх різницю,
-кінь 1 і кінь 2 і порівняти різниця їх сили меньше чим різниця сили першої пари якщо так
-то берем цю різницю як мінімальною. І так по всім парам поки не знайдемо мінімальну різницю пар.
--------------------------------------------------------------------------------
-спочатку читаєте скільки конів
-var horses int
-fmt.Sscanf("%d", &horses)
-потім в циклі читаєте їх силу та записуєте то в слайс
-  for i := 1; i < horses; i++ {
-   // тут пишете код читання с клави та додавання в слайс
-  }
+Output
+The difference D between the two closest strengths. D is an integer greater than or equal to 0.
