@@ -1,35 +1,4 @@
-Home Work 2
+Home Work 3
 
-Implement a shopping application in Go that allows customers to make purchases.
-Instead of using a traditional database, use a map as a cache to store product information and customer data.
-
-The application should have the following features:
-Customers should be able to browse a list of available products and view their details, including the name, price, and quantity in stock.
-Customers should be able to add products to their shopping cart and view the contents of their cart.
-Customers should be able to checkout and complete their purchases, reducing the quantity of the purchased items in stock and updating
-their customer information.
-
-The application should enforce a maximum quantity limit for each product
-and should prevent customers from purchasing more than the available quantity.
-
-To implement the application, create a Product struct with the following fields:
-Name string: the name of the product.
-Price float64: the price of the product.
-Quantity int: the number of units of the product in stock.
-
-Create a map to store the product information, with the product name as the key and the Product struct as the value.
-
-Create a Customer struct with the following fields:
-Name string: the name of the customer.
-Email string: the email address of the customer.
-Cart map[string]int: a map to store the products in the customer's shopping cart, with the product name as the key and the quantity as the value.
-
-Create a map to store the customer information, with the customer email as the key and the Customer struct as the value.
-
-Implement the following methods for the application:
-ViewProducts(): displays a list of available products with their details.
-ViewProductDetails(productName string): displays the details of a specific product.
-AddToCart(customerEmail string, productName string, quantity int): adds a product to a customer's cart.
-ViewCart(customerEmail string): displays the contents of a customer's cart.
-Checkout(customerEmail string): completes a customer's purchase and updates the product quantities and customer information.
-To use the map-based cache in the application, store the product and customer information in a map instead of a traditional database.
+Create a program that will receive a request to download content (an archive). The program should have the following components:Concurrent Downloader: A module responsible for downloading the requested archive concurrently to improve performance. It should use channels for communication between the components.Chunker: A module that first decompresses the archive and then divides all the files into chunks of 1 kilobyte in size. It should also use channels for communication with other modules.Acceptor: A module that will receive and process the 1-kilobyte chunks sent through channels.
+The goal is to implement a system that can efficiently download, decompress, and process an archive by breaking it down into smaller manageable pieces. The use of concurrency and channels in Golang will improve the overall performance and allow for effective communication between the different modules.
