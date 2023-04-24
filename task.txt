@@ -1,35 +1,40 @@
-Home Work 2
+Chat server
 
-Implement a shopping application in Go that allows customers to make purchases.
-Instead of using a traditional database, use a map as a cache to store product information and customer data.
-
-The application should have the following features:
-Customers should be able to browse a list of available products and view their details, including the name, price, and quantity in stock.
-Customers should be able to add products to their shopping cart and view the contents of their cart.
-Customers should be able to checkout and complete their purchases, reducing the quantity of the purchased items in stock and updating
-their customer information.
-
-The application should enforce a maximum quantity limit for each product
-and should prevent customers from purchasing more than the available quantity.
-
-To implement the application, create a Product struct with the following fields:
-Name string: the name of the product.
-Price float64: the price of the product.
-Quantity int: the number of units of the product in stock.
-
-Create a map to store the product information, with the product name as the key and the Product struct as the value.
-
-Create a Customer struct with the following fields:
-Name string: the name of the customer.
-Email string: the email address of the customer.
-Cart map[string]int: a map to store the products in the customer's shopping cart, with the product name as the key and the quantity as the value.
-
-Create a map to store the customer information, with the customer email as the key and the Customer struct as the value.
-
-Implement the following methods for the application:
-ViewProducts(): displays a list of available products with their details.
-ViewProductDetails(productName string): displays the details of a specific product.
-AddToCart(customerEmail string, productName string, quantity int): adds a product to a customer's cart.
-ViewCart(customerEmail string): displays the contents of a customer's cart.
-Checkout(customerEmail string): completes a customer's purchase and updates the product quantities and customer information.
-To use the map-based cache in the application, store the product and customer information in a map instead of a traditional database.
+Overview
+Develop a chat server that will allow clients to connect using a JWT token. The server will generate the token when the client requests it. The token will have the permissions to create, edit, and delete rooms, as well as edit and remove messages from other participants and themselves. Clients can send requests to the server with commands to create rooms, remove rooms, edit rooms, edit and remove messages from participants and themselves, and receive all messages from a room. The server should validate the token and check if the client has permission to execute the command. The client should handle server disconnect and request a list of all participants. The server should store all information about rooms and their participants. The token should expire, and if a room is closed by one participant, all clients should disconnect from that room.
+Requirements
+The chat server should have the following requirements:
+JWT Token Generation
+The server should be able to generate a JWT token when a client requests it. The token should have the following grants:
+Create, edit, and delete rooms
+Edit and remove messages from other participants and themselves
+The token should have an expiration.
+Communication Protocol and Format
+You should choose a communication protocol and format for the chat server. Some options include gRPC, RESTApi, WebSockets, or other communication protocols. The format of the requests and responses should be specified, including the required fields and their types.
+Client Commands
+The server should be able to handle the following commands from clients:
+Create a room
+Remove a room
+Edit a room
+Edit and remove messages from participants and themselves
+Receive all messages from a room
+Clients should send requests with the JWT token.
+Client Validation
+The server should validate the JWT token and check if the client has permission to execute the command. If the token is invalid or the client does not have permission, the server should reject the request.
+Room Management
+The server should store information about rooms and their participants. If a room is closed by one participant, all clients should disconnect from that room.
+Client Disconnection
+Clients should be able to handle server disconnects gracefully.
+Participant List
+Clients should be able to request a list of all participants in a room.
+Technology Stack
+The chat server should be developed using the following technologies:
+Golang
+JSON Web Tokens (JWT)
+The communication protocol and format of your choice
+Deliverables
+The deliverables for this project are:
+Source code for the chat server
+Documentation on how to use the server, including how to generate a JWT token and how to send requests with the token
+Documentation on the technology stack and any libraries used
+Unit tests for the server.
