@@ -1,3 +1,3 @@
-module HW_2
+module HW_3
 
 go 1.20
