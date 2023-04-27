@@ -1,7 +1,0 @@
-Home Work 3.1
-
-Design and implement a program that simulates a simple restaurant ordering system using goroutines and channels. The system should consist of the following components:
-- Customer: A function that simulates a customer placing an order. Each customer should be represented as a separate goroutine, and the orders should be sent to the kitchen using a channel.
-- Kitchen: A function that receives orders from the customer channel, processes the orders concurrently using goroutines, and sends the prepared dishes to the waiter using another channel.
-- Waiter: A function that receives the prepared dishes from the kitchen channel and serves them to the customers.
-The program should simulate multiple customers placing orders, the kitchen processing those orders concurrently, and the waiter serving the dishes. Use channels for communication between the different components and goroutines to represent the parallelism in the system.
